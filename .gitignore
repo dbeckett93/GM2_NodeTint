@@ -39,3 +39,23 @@ luac.out
 *.x86_64
 *.hex
 
+# Claude Code local config (settings.local.json, plans, agent transcripts, etc.)
+.claude/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.code-workspace
+*.swp
+*.swo
+*~
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Local backups / scratch
+*.bak
+*.orig
+*.tmp

@@ -1,0 +1,17 @@
+## Interface: 120005
+## Title: GM2 NodeTint
+## Notes: Per-node colour overrides for GatherMate2 minimap and world map pins.
+## Author: Dan
+## Version: 0.1.0
+## SavedVariables: GM2NodeTintDB
+## Dependencies: GatherMate2
+## OptionalDeps: GatherMate2_Data
+## X-Category: Map & Minimap
+## X-License: MIT
+
+embeds.xml
+
+Defaults.lua
+Core.lua
+Hooks.lua
+Config.lua
