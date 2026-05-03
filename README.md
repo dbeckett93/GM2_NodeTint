@@ -16,7 +16,7 @@ What you get on top of GatherMate2: per-category and per-individual-node colour 
   <img src="Media/screenshot-minimap.png" alt="Minimap with coloured node pins" width="220">
 </p>
 
-<p align="center"><em>Eastern Plaguelands at the world map level, and a close-range minimap view. The same per-node palette applies to both surfaces.</em></p>
+<p align="center"><em>World map level, and a close-range minimap view. The same per-node palette applies to both surfaces.</em></p>
 
 ## Requirements
 
