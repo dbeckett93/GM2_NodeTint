@@ -3,6 +3,7 @@
 ## Notes: Per-node colour overrides for GatherMate2 minimap and world map pins.
 ## Author: Dan
 ## Version: 0.1.0
+## IconTexture: Interface\AddOns\GM2_NodeTint\Media\nodetint-64.tga
 ## SavedVariables: GM2NodeTintDB
 ## Dependencies: GatherMate2
 ## OptionalDeps: GatherMate2_Data
