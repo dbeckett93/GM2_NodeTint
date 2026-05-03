@@ -15,8 +15,21 @@ What you get on top of GatherMate2: per-category and per-individual-node colour 
 
 ## Install
 
-1. Download or clone the repo into your `World of Warcraft\_retail_\Interface\AddOns\GM2_NodeTint\` folder.
-2. Restart the client (or `/reload` if it's already running).
+### From a release (recommended)
+
+1. Grab the latest `GM2_NodeTint-<version>.zip` from the [Releases page](https://github.com/dbeckett93/GM2_NodeTint/releases).
+2. Extract the `GM2_NodeTint` folder inside the zip into `World of Warcraft\_retail_\Interface\AddOns\`.
+3. Restart the client (or `/reload` if it's already running).
+
+The release zip contains only the runtime files (Lua, TOC, embedded Ace3, textures, in-game icon). It's ready to drop into the AddOns folder as-is.
+
+### From source
+
+```
+git clone https://github.com/dbeckett93/GM2_NodeTint.git "World of Warcraft\_retail_\Interface\AddOns\GM2_NodeTint"
+```
+
+The source tree includes development-only files (`.github/`, `Media/*.png`, etc.) that the game ignores but that bloat the install slightly compared to the release zip.
 
 ## Usage
 

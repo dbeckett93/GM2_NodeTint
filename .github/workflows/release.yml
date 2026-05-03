@@ -1,0 +1,53 @@
+name: Release
+
+# Builds a drop-into-AddOns zip and publishes it as a GitHub Release whenever
+# a tag of the form v* is pushed (e.g. v0.1.0, v1.2.3-beta).
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Determine version (strip leading v)
+        id: version
+        run: echo "VERSION=${GITHUB_REF#refs/tags/v}" >> "$GITHUB_OUTPUT"
+
+      - name: Build addon zip
+        run: |
+          set -euo pipefail
+          STAGE="$(mktemp -d)"
+          DEST="$STAGE/GM2_NodeTint"
+          mkdir -p "$DEST"
+          rsync -a \
+            --exclude '.git' \
+            --exclude '.gitignore' \
+            --exclude '.github' \
+            --exclude '.claude' \
+            --exclude '.vscode' \
+            --exclude '.idea' \
+            --exclude '*.bak' \
+            --exclude '*.orig' \
+            --exclude '*.tmp' \
+            ./ "$DEST/"
+          ZIP="GM2_NodeTint-${{ steps.version.outputs.VERSION }}.zip"
+          (cd "$STAGE" && zip -r "$GITHUB_WORKSPACE/$ZIP" GM2_NodeTint)
+          ls -la "$ZIP"
+          unzip -l "$ZIP" | head -30
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: GM2_NodeTint-${{ steps.version.outputs.VERSION }}.zip
+          generate_release_notes: true
+          draft: false
+          prerelease: ${{ contains(github.ref_name, '-') }}
