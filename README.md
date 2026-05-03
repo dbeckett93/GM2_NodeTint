@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="Media/nodetint-256.png" alt="GM2 NodeTint" width="256" height="256">
+</p>
+
 # GM2 NodeTint
 
 Per-node colour overrides for [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2) gathering pins on the World of Warcraft retail client (Midnight 12.0.5).
