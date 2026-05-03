@@ -134,6 +134,7 @@ function addon:Setup()
     ns._setupDone = true
 
     if ns.InstallHooks then ns.InstallHooks() end
+    if ns.SeedNodeColors then ns.SeedNodeColors() end
     if ns.RegisterOptions then ns.RegisterOptions() end
     self:ApplyBridgeState()
 end
@@ -199,6 +200,7 @@ function addon:RefreshPins()
 end
 
 function addon:RefreshConfig()
+    if ns.SeedNodeColors then ns.SeedNodeColors() end
     self:ApplyBridgeState()
     self:RefreshPins()
     if ns.NotifyConfigChanged then ns.NotifyConfigChanged() end

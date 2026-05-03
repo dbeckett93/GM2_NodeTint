@@ -12,6 +12,7 @@
 embeds.xml
 
 Defaults.lua
+Palette.lua
 Core.lua
 Hooks.lua
 Config.lua
