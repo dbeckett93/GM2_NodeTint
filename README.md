@@ -4,13 +4,12 @@
 
 # GM2 NodeTint
 
-Per-node colour overrides for [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2) gathering pins on the World of Warcraft retail client (Midnight 12.0.5).
+**A companion addon for [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2).** GM2 NodeTint does not replace GatherMate2 — it sits on top of it, hooks its existing pin pipeline, and adds per-node and per-category colour customisation to the pins GatherMate2 already shows. GatherMate2 is a hard dependency; GM2 NodeTint cannot run on its own.
 
-GM2 NodeTint sits on top of GatherMate2 and recolours its world-map and minimap pins on a per-category and per-individual-node basis, so you can tell similar nodes apart at a glance — for example colouring "Bismuth Deposit" differently from the rest of "Mining".
+What you get on top of GatherMate2: per-category and per-individual-node colour overrides on both the world map and the minimap, so you can tell similar nodes apart at a glance — for example colouring "Bismuth Deposit" differently from other nodes.
 
 ## Requirements
 
-- World of Warcraft Retail (Interface 120005, patch 12.0.5)
 - [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2) — required
 - [GatherMate2_Data](https://www.curseforge.com/wow/addons/gathermate2_data) — optional but recommended (full per-node list in the options panel)
 
@@ -36,6 +35,10 @@ The options panel has four tabs:
 ## Caveat: GatherMate2 tracking circles
 
 When GatherMate2's *Track Distance* feature is enabled, close-range pins switch to a generic ring icon rather than the per-node icon. The colour you set in GM2 NodeTint still applies, but the visual icon distinction is lost in close range. Disable Track Distance in GatherMate2's own options if you want the icons back.
+
+## Acknowledgements
+
+GM2 NodeTint is built entirely on the foundation of [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2). Sincere thanks to their development team for years of work on GatherMate and GatherMate2 — the data collection, the pin lifecycle, and the public hooks this addon depends on. None of GM2 NodeTint exists without their groundwork.
 
 ## Licence
 
