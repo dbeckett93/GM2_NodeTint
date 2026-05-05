@@ -15,11 +15,11 @@ GM2 NodeTint paints every gathering node its own colour on top of GatherMate2's 
 ## See the difference (minimap)
 
 <p align="center">
-  <img src="Media/screenshots/minimap_gm2.png" alt="GatherMate2 default minimap" width="240">
+  <img src="Media/screenshots/minimap_gm2.jpg" alt="GatherMate2 default minimap" width="240">
   &nbsp;
-  <img src="Media/screenshots/minimap_gmnt.png" alt="GMNT default minimap" width="240">
+  <img src="Media/screenshots/minimap_gmnt.jpg" alt="GMNT default minimap" width="240">
   &nbsp;
-  <img src="Media/screenshots/minimap_gmnt_vivid.png" alt="GMNT vivid minimap" width="240">
+  <img src="Media/screenshots/minimap_gmnt_vivid.jpg" alt="GMNT vivid minimap" width="240">
 </p>
 
 <p align="center"><em>GatherMate2 alone (left): every herb pin is a green leaf, every ore pin is a brown lump — they're all the same shape, same hue. GMNT default (centre): same icon style, but each individual node type gets its own colour. GMNT vivid (right): neutral icon mode plus targeted filtering for maximum contrast.</em></p>
@@ -27,7 +27,7 @@ GM2 NodeTint paints every gathering node its own colour on top of GatherMate2's 
 Want to cut the visual noise even further? GatherMate2 has its own filter dialog where you can hide node types you don't currently care about. Pair it with GMNT's per-node colour and you can say "show me Azeroot, Mana Lily, and Tranquility Bloom only — and paint each a different colour" for a focused farming view.
 
 <p align="center">
-  <img src="Media/screenshots/gm2_filters_showcase.png" alt="GatherMate2 filter dialog" width="380">
+  <img src="Media/screenshots/gm2_filters_showcase.jpg" alt="GatherMate2 filter dialog" width="380">
 </p>
 
 ## And on the world map
@@ -73,7 +73,7 @@ Four tabs.
 ### General
 
 <p align="center">
-  <img src="Media/screenshots/gmnt_general.png" alt="General tab" width="640">
+  <img src="Media/screenshots/gmnt_general.jpg" alt="General tab" width="640">
 </p>
 
 The master switches and the visual upgrades. Toggle world-map and minimap tinting independently, flip on **Use neutral icons (vivid colours)** for the saturated look, dial **pin scale** and **pin opacity**, gate the minimap to **only show pins in proximity** when you want a quiet view, and optionally **sync your category palette into GatherMate2's tracking circles** so the close-range ring uses the same colours.
@@ -81,7 +81,7 @@ The master switches and the visual upgrades. Toggle world-map and minimap tintin
 ### Categories
 
 <p align="center">
-  <img src="Media/screenshots/gmnt_categories.png" alt="Categories tab" width="640">
+  <img src="Media/screenshots/gmnt_categories.jpg" alt="Categories tab" width="640">
 </p>
 
 One swatch per gathering category — Mining, Herb Gathering, Fishing, Logging, Extract Gas, Treasure, Archaeology. The category colour applies to every node in the category unless a per-node override is set.
@@ -89,7 +89,7 @@ One swatch per gathering category — Mining, Herb Gathering, Fishing, Logging, 
 ### Per-Node
 
 <p align="center">
-  <img src="Media/screenshots/gmnt_per_node.png" alt="Per-Node tab" width="640">
+  <img src="Media/screenshots/gmnt_per_node.jpg" alt="Per-Node tab" width="640">
 </p>
 
 Drill into a category and assign a specific node its own colour. Defaults are seeded automatically per gathering expansion — Classic warm earth, Wrath icy blue, Shadowlands ethereal purple, Midnight silver-cobalt, and so on — so you start from a sensible palette and only need to tweak the ones you care about. Change anything and the rest stay; reset a node and it picks up the auto-seeded default again on next reload.
@@ -97,7 +97,7 @@ Drill into a category and assign a specific node its own colour. Defaults are se
 ### Profiles
 
 <p align="center">
-  <img src="Media/screenshots/gmnt_profiles.png" alt="Profiles tab" width="640">
+  <img src="Media/screenshots/gmnt_profiles.jpg" alt="Profiles tab" width="640">
 </p>
 
 Standard AceDB profile management — per-character by default, but you can copy a profile to another character or share one palette across your alts in two clicks.

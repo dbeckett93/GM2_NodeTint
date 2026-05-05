@@ -60,9 +60,7 @@ desktop.ini
 *.orig
 *.tmp
 
-# Un-resized world map originals (compressed JPG siblings are committed instead).
-# OneDrive's reparse-point write block prevented in-place compression, so the
-# originals remain on disk locally and are excluded from the repo.
-Media/screenshots/worldmap_gm2.png
-Media/screenshots/worldmap_gmnt_standard.png
-Media/screenshots/worldmap_gmnt_vivid.png
+# Screenshot originals — we ship JPEG versions only. PNG originals stay on
+# disk locally (OneDrive reparse points often block in-place overwrites
+# anyway) and are excluded from the repo.
+Media/screenshots/*.png
