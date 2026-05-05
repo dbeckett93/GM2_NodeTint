@@ -2,26 +2,45 @@
   <img src="Media/nodetint-256.png" alt="GM2 NodeTint" width="256" height="256">
 </p>
 
+<p align="center"><em>A colour for every node. Less squinting, more gold.</em></p>
+
 # GM2 NodeTint
 
-**A companion addon for [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2).** GM2 NodeTint does not replace GatherMate2 — it sits on top of it, hooks its existing pin pipeline, and adds per-node and per-category colour customisation to the pins GatherMate2 already shows. GatherMate2 is a hard dependency; GM2 NodeTint cannot run on its own.
+If you've ever flown circles over a cluster of herb pins trying to work out which one is the Azeroot and which is the *fifth* Tranquility Bloom of your route, this is for you.
 
-What you get on top of GatherMate2: per-category and per-individual-node colour overrides on both the world map and the minimap, so you can tell similar nodes apart at a glance — for example colouring "Bismuth Deposit" differently from other nodes.
+GM2 NodeTint paints every gathering node its own colour on top of GatherMate2's pins, so you can tell them apart at a glance — on the world map when you're planning, and on the minimap at the precise moment of "do I land or not?". Built primarily for Mining and Herbalism gold runs; everything else GatherMate2 tracks (Fishing, Treasure, Logging, Extract Gas, Archaeology) comes along for the ride.
 
-## In action
+**GM2 NodeTint is a companion addon for [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2).** It does not replace GatherMate2 — it sits on top of it, hooks the existing pin pipeline, and adds colour. GatherMate2 is a hard dependency; GMNT cannot run on its own.
+
+## See the difference (minimap)
 
 <p align="center">
-  <img src="Media/screenshot-worldmap.png" alt="World map with coloured node pins (Eastern Plaguelands)" width="380">
-  &nbsp;&nbsp;
-  <img src="Media/screenshot-minimap.png" alt="Minimap with coloured node pins" width="220">
+  <img src="Media/screenshots/minimap_gm2.png" alt="GatherMate2 default minimap" width="240">
+  &nbsp;
+  <img src="Media/screenshots/minimap_gmnt.png" alt="GMNT default minimap" width="240">
+  &nbsp;
+  <img src="Media/screenshots/minimap_gmnt_vivid.png" alt="GMNT vivid minimap" width="240">
 </p>
 
-<p align="center"><em>World map level, and a close-range minimap view. The same per-node palette applies to both surfaces.</em></p>
+<p align="center"><em>GatherMate2 alone (left): every herb pin is a green leaf, every ore pin is a brown lump — they're all the same shape, same hue. GMNT default (centre): same icon style, but each individual node type gets its own colour. GMNT vivid (right): neutral icon mode plus targeted filtering for maximum contrast.</em></p>
 
-## Requirements
+Want to cut the visual noise even further? GatherMate2 has its own filter dialog where you can hide node types you don't currently care about. Pair it with GMNT's per-node colour and you can say "show me Azeroot, Mana Lily, and Tranquility Bloom only — and paint each a different colour" for a focused farming view.
 
-- [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2) — required
-- [GatherMate2_Data](https://www.curseforge.com/wow/addons/gathermate2_data) — optional but recommended (full per-node list in the options panel)
+<p align="center">
+  <img src="Media/screenshots/gm2_filters_showcase.png" alt="GatherMate2 filter dialog" width="380">
+</p>
+
+## And on the world map
+
+<p align="center">
+  <img src="Media/screenshots/worldmap_gm2.jpg" alt="GatherMate2 default world map" width="300">
+  &nbsp;
+  <img src="Media/screenshots/worldmap_gmnt_standard.jpg" alt="GMNT default world map" width="300">
+  &nbsp;
+  <img src="Media/screenshots/worldmap_gmnt_vivid.jpg" alt="GMNT vivid world map" width="300">
+</p>
+
+<p align="center"><em>Same zone, same progression: GatherMate2 default → GMNT default → GMNT vivid.</em></p>
 
 ## Install
 
@@ -39,37 +58,64 @@ The release zip contains only the runtime files (Lua, TOC, embedded Ace3, textur
 git clone https://github.com/dbeckett93/GM2_NodeTint.git "World of Warcraft\_retail_\Interface\AddOns\GM2_NodeTint"
 ```
 
-The source tree includes development-only files (`.github/`, `Media/*.png`, etc.) that the game ignores but that bloat the install slightly compared to the release zip.
+The source tree includes development-only files (`.github/`, `Media/`) that the game ignores but that bloat the install slightly compared to the release zip.
 
-## Usage
+## Configure
 
-- `/gmnt` — open the options panel
-- `/gmnt toggle` — flip the master enable/disable switch
-- `/gmnt reset` — reset the active profile to defaults
-- `/gm2nodetint` — long-form alias
+Open the options panel:
 
-The options panel has four tabs:
+- `/gmnt` (or `/gm2nodetint`) — open settings
+- `/gmnt toggle` — flip the master enable
+- `/gmnt reset` — reset the active profile
 
-- **General** — master toggle, per-surface toggles for world map / minimap, neutral-icon mode for vivid colours, pin scale and opacity, a minimap proximity-only mode, a sync-into-GatherMate2-tracking-circles bridge, and a profile reset.
-- **Categories** — one colour swatch per category (Mining, Herb Gathering, Fishing, Logging, Extract Gas, Treasure, Archaeology). Applied to every node in the category unless overridden.
-- **Per-Node** — drill into a category and assign a colour to a specific node. Per-node values override category defaults. Defaults are seeded automatically per gathering expansion (see [Palette.lua](Palette.lua)).
-- **Profiles** — standard AceDB profile management (per-character by default, with copy / share between characters).
+Four tabs.
+
+### General
 
 <p align="center">
-  <img src="Media/screenshot-general.png" alt="General options panel" width="450">
-  &nbsp;
-  <img src="Media/screenshot-pernode.png" alt="Per-Node options panel showing Herb Gathering" width="450">
+  <img src="Media/screenshots/gmnt_general.png" alt="General tab" width="640">
 </p>
 
-<p align="center"><em>General tab (left) and Per-Node tab (right, Herb Gathering selected).</em></p>
+The master switches and the visual upgrades. Toggle world-map and minimap tinting independently, flip on **Use neutral icons (vivid colours)** for the saturated look, dial **pin scale** and **pin opacity**, gate the minimap to **only show pins in proximity** when you want a quiet view, and optionally **sync your category palette into GatherMate2's tracking circles** so the close-range ring uses the same colours.
+
+### Categories
+
+<p align="center">
+  <img src="Media/screenshots/gmnt_categories.png" alt="Categories tab" width="640">
+</p>
+
+One swatch per gathering category — Mining, Herb Gathering, Fishing, Logging, Extract Gas, Treasure, Archaeology. The category colour applies to every node in the category unless a per-node override is set.
+
+### Per-Node
+
+<p align="center">
+  <img src="Media/screenshots/gmnt_per_node.png" alt="Per-Node tab" width="640">
+</p>
+
+Drill into a category and assign a specific node its own colour. Defaults are seeded automatically per gathering expansion — Classic warm earth, Wrath icy blue, Shadowlands ethereal purple, Midnight silver-cobalt, and so on — so you start from a sensible palette and only need to tweak the ones you care about. Change anything and the rest stay; reset a node and it picks up the auto-seeded default again on next reload.
+
+### Profiles
+
+<p align="center">
+  <img src="Media/screenshots/gmnt_profiles.png" alt="Profiles tab" width="640">
+</p>
+
+Standard AceDB profile management — per-character by default, but you can copy a profile to another character or share one palette across your alts in two clicks.
+
+## Pro tips
+
+- **Want colours that punch through the map?** Flip **Use neutral icons (vivid colours)** on. GMNT swaps GatherMate2's pre-coloured icons for white silhouettes before tinting, so your colour reaches the screen at full saturation instead of being muted by the underlying icon hue.
+- **Tracking a specific herb on a daily route?** Bump its per-node colour to neon. The rest of the herbs fade into wallpaper and the one you want jumps off the map.
+- **Tired of the minimap looking like a sticker book?** Turn on **Minimap: only show pins in proximity**. Pins beyond GatherMate2's tracking distance vanish; only the ones you can actually act on remain.
+- **Setting up an alt?** Profiles → New Profile → Copy From → main. Done.
 
 ## Caveat: GatherMate2 tracking circles
 
-When GatherMate2's *Track Distance* feature is enabled, close-range pins switch to a generic ring icon rather than the per-node icon. The colour you set in GM2 NodeTint still applies, but the visual icon distinction is lost in close range. Disable Track Distance in GatherMate2's own options if you want the icons back.
+If GatherMate2's *Track Distance* is on, close-range pins switch to a generic ring icon. GMNT's colour still applies to the ring, but the per-node icon disappears at close range. Turn off Track Distance in GatherMate2 if you'd rather keep the icons.
 
-## Acknowledgements
+## Built on GatherMate2
 
-GM2 NodeTint is built entirely on the foundation of [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2). Sincere thanks to their development team for years of work on GatherMate and GatherMate2 — the data collection, the pin lifecycle, and the public hooks this addon depends on. None of GM2 NodeTint exists without their groundwork.
+GM2 NodeTint is built entirely on the foundation of [GatherMate2](https://www.curseforge.com/wow/addons/gathermate2). Sincere thanks to the GatherMate2 development team for years of work on data collection, the pin lifecycle, and the public hooks GMNT depends on. None of this exists without their groundwork.
 
 ## Licence
 
